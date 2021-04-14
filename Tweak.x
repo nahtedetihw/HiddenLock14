@@ -2,7 +2,7 @@
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "Tweak.h"
 
-//Thanks to u/CreatureSurvive, u/WoahAName, u/Menushka, little GrapeScript & little azzou :)
+//Thanks to u/CreatureSurvive, u/WoahAName, little GrapeScript & little azzou :)
 
 %hook TCCDService
 - (void)setDefaultAllowedIdentifiersList:(NSArray *)list {
@@ -27,8 +27,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row == 1) {
 		LAContext *context = [LAContext new];
-		NSError *authError = nil;
-		if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
+		NSError *fiError = nil;
+		if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&fiError]) {
 			[context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"Unlock Hidden album", nil) reply:^(BOOL success, NSError *error) {
 				dispatch_async(dispatch_get_main_queue(), ^{
 					if (success) {
