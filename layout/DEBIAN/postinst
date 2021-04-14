@@ -1,0 +1,4 @@
+#!/bin/sh
+killall -9 tccd
+exit 0
+echo "Thanks for installing HiddenLock14 by yan 👨🏽‍💻"
