@@ -2,7 +2,7 @@
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "Tweak.h"
 
-//Thanks to u/CreatureSurvive, u/WoahAName, little GrapeScript & little azzou :)
+//Thanks to u/CreatureSurvive, u/WoahAName, u/Menushka, little GrapeScript & little azzou :)
 
 %hook TCCDService
 - (void)setDefaultAllowedIdentifiersList:(NSArray *)list {
